@@ -1,0 +1,1630 @@
+Initialize engine version: 5.6.2f1 (a2913c821e27)
+GfxDevice: creating device client; threaded=1
+VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_HmdNotFoundPresenceFailed: "Hmd Not Found Presence Failed (126)"!
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x009EDDEB (HandTest) 
+0x009EE081 (HandTest) 
+0x009DD01A (HandTest) 
+0x004CE993 (HandTest) 
+0x004D1605 (HandTest) 
+0x00514AB6 (HandTest) 
+0x004A4F9C (HandTest) 
+0x004A6D48 (HandTest) 
+0x00915223 (HandTest) 
+0x00296F0A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename:  Line: 1028)
+
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 (ID=0x1c20)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   22.21.13.8205
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\UnityEngine.VR.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\AudioArray.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\AudioArray.dll into Unity Child Domain
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\AudioPacket.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\AudioPacket.dll into Unity Child Domain
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\CLZF2.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\CLZF2.dll into Unity Child Domain
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\LANParty.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\LANParty.dll into Unity Child Domain
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\TextureScale.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\TextureScale.dll into Unity Child Domain
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\VideoChat.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\VideoChat.dll into Unity Child Domain
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\VideoPacket.dll (this message is harmless)
+Loading C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\VideoPacket.dll into Unity Child Domain
+- Completed reload, in  0.020 seconds
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\System.dll (this message is harmless)
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initialized touch support.
+VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_HmdNotFoundPresenceFailed: "Hmd Not Found Presence Failed (126)"!
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x009EDDEB (HandTest) 
+0x009EE1DB (HandTest) 
+0x009EE6A6 (HandTest) 
+0x009DF7DA (HandTest) 
+0x009E7C31 (HandTest) 
+0x009E7C7B (HandTest) 
+0x002971D2 (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename:  Line: 1028)
+
+VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_HmdNotFoundPresenceFailed: "Hmd Not Found Presence Failed (126)"!
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x009EDDEB (HandTest) 
+0x009EE1DB (HandTest) 
+0x009EE6A6 (HandTest) 
+0x009DF7DA (HandTest) 
+0x009E7981 (HandTest) 
+0x009E7C5B (HandTest) 
+0x009E7C7B (HandTest) 
+0x002971D2 (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename:  Line: 1028)
+
+UnloadTime: 2.948741 ms
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\Mono.Security.dll (this message is harmless)
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\System.Configuration.dll (this message is harmless)
+Platform assembly: C:\Users\SpaceVR\Desktop\Human_17Sept_STABLE_SERVER\HandTest_Data\Managed\System.Xml.dll (this message is harmless)
+COM256 status: False
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051EFC9B (Mono JIT Code) RightHand_Controller:Start ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091E46C (HandTest) 
+0x0091E867 (HandTest) 
+0x0091EE85 (HandTest) 
+0x0048D577 (HandTest) 
+0x00912D20 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+COM256 baud: 115200
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051EFCE2 (Mono JIT Code) RightHand_Controller:Start ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091E46C (HandTest) 
+0x0091E867 (HandTest) 
+0x0091EE85 (HandTest) 
+0x0048D577 (HandTest) 
+0x00912D20 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+COM256 status: True
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051EFD53 (Mono JIT Code) RightHand_Controller:Start ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091E46C (HandTest) 
+0x0091E867 (HandTest) 
+0x0091EE85 (HandTest) 
+0x0048D577 (HandTest) 
+0x00912D20 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+COM256 baud: 115200
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051EFDB0 (Mono JIT Code) RightHand_Controller:Start ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091E46C (HandTest) 
+0x0091E867 (HandTest) 
+0x0091EE85 (HandTest) 
+0x0048D577 (HandTest) 
+0x00912D20 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+COM255 status: False
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F279B (Mono JIT Code) LeftHand_Controller:Start ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091E46C (HandTest) 
+0x0091E867 (HandTest) 
+0x0091EE85 (HandTest) 
+0x0048D577 (HandTest) 
+0x00912D20 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+COM255 baud: 115200
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F27E2 (Mono JIT Code) LeftHand_Controller:Start ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091E46C (HandTest) 
+0x0091E867 (HandTest) 
+0x0091EE85 (HandTest) 
+0x0048D577 (HandTest) 
+0x00912D20 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+COM255 status: True
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F2853 (Mono JIT Code) LeftHand_Controller:Start ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091E46C (HandTest) 
+0x0091E867 (HandTest) 
+0x0091EE85 (HandTest) 
+0x0048D577 (HandTest) 
+0x00912D20 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+COM255 baud: 115200
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F28B0 (Mono JIT Code) LeftHand_Controller:Start ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091E46C (HandTest) 
+0x0091E867 (HandTest) 
+0x0091EE85 (HandTest) 
+0x0048D577 (HandTest) 
+0x00912D20 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: df0 -> priority: 1 
+  Thread -> id: 195c -> priority: 1 
+  Thread -> id: 318c -> priority: 1 
+  Thread -> id: 308 -> priority: 1 
+F0P16
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F1P16
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F2P22
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F3P16
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F0P28
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F1P10
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F2P26
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F3P26
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F0P18
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F1P4
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F2P4
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F3P16
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F0P8
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F1P32
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F2P12
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F3P22
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F0P24
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F1P18
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F2P30
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F3P28
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F0P6
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F1P6
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F2P0
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F3P12
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F0P6
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F1P18
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F2P12
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F3P18
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F0P32
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F1P28
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F2P26
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F3P14
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F0P20
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F1P16
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F2P28
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F3P16
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F0P10
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F1P28
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F2P6
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F3P10
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4AED (Mono JIT Code) LeftHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F0P28
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+F1P20
+0x00A32A2B (HandTest) 
+0x00A3415B (HandTest) 
+0x0092660B (HandTest) 
+0x00628A5A (HandTest) 
+0x00628D8A (HandTest) 
+0x008DBB2C (HandTest) 
+0x051F0515 (Mono JIT Code) (wrapper managed-to-native) UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,string,UnityEngine.Object)
+0x051F04B6 (Mono JIT Code) UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+0x051F0379 (Mono JIT Code) UnityEngine.Logger:Log (UnityEngine.LogType,object)
+0x051F0239 (Mono JIT Code) UnityEngine.Debug:Log (object)
+0x051F4814 (Mono JIT Code) RightHand_Controller:Update ()
+0x051CA1A9 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x100F18F9 (mono) mono_set_defaults
+0x1005D868 (mono) mono_runtime_invoke
+0x007770D0 (HandTest) 
+0x00773B42 (HandTest) 
+0x0091CA0E (HandTest) 
+0x0091EC61 (HandTest) 
+0x0091EC77 (HandTest) 
+0x0064CC51 (HandTest) 
+0x0029736A (HandTest) 
+0x00A6C048 (HandTest) 
+0x00AA9CC4 (HandTest) 
+0x74E18744 (KERNEL32) BaseThreadInitThunk
+0x77C1582D (ntdll) RtlGetAppContainerNamedObjectPath
+0x77C157FD (ntdll) RtlGetAppContainerNamedObjectPath
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+

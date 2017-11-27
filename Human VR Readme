@@ -1,0 +1,30 @@
+VMG_Gloves_Assets = GLove files
+
+Tracker_Handler = Kinova Arms and tracker code. Future: Gloves also impact arm code.
+
+Video Chat = Jeff says incorrectly implemented. Need to fix this eventually.
+
+Streaming Assets = useless or related to video chat.
+
+SerialComm = Written for Unity. taken from github. Currently controls hands. Will eventually be integrated with udoo and other serial peripherals.
+
+Plugins = AVProVideo.bundle for the video. ARM_base_32.dll is the dll for the arm.
+
+HTC Vive Unity Plugin = HTC Vive related stuff. Figure out what it does?
+
+Dolby_Audio_Plugin = Could be part of the video asset. Investigate.
+
+AVProVideo = For video playback. 
+
+Scene Files = Eventually move them to a Scenes folder.
+
+
+
+
+
+
+
+
+
+
+
