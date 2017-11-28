@@ -137,6 +137,7 @@ public class VideoChatExample : MonoBehaviour {
 	}
 
 	void OnGUI () {
+        return;
 		if( !VideoChat.tempImage && !VideoChat.videoPrimed || !UI )
 			return;
 

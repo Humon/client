@@ -176,7 +176,7 @@ public class MoveFingersMessage : MessageBase
 
 public class MyNetworkManager : MonoBehaviour
 {
-
+  
   private bool handHasData = false;
   private bool handsInitialized = false;
 	
@@ -215,19 +215,20 @@ public class MyNetworkManager : MonoBehaviour
 	}
 
         if (Input.GetKeyDown(KeyCode.I)) {
+            // Debug info about where arm thinks it is, should go next frame, and should go globally.
             GetCartesianCommands();
-            //myClient.Send(MyMsgTypes.MSG_GET_CARTESIAN_COMMANDS, m);
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
             GetCartesianPositions();
             //myClient.Send(MyMsgTypes.MSG_GET_CARTESIAN_COMMANDS, m);
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
             GetCachedCartesianCommands();
-            //myClient.Send(MyMsgTypes.MSG_GET_CARTESIAN_COMMANDS, m);
         }
+        //if (Input.GetKeyDown(KeyCode.O))
+        //{
+        //    //myClient.Send(MyMsgTypes.MSG_GET_CARTESIAN_COMMANDS, m);
+        //}
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    //myClient.Send(MyMsgTypes.MSG_GET_CARTESIAN_COMMANDS, m);
+        //}
     }
 
     public bool isConnectedToServer()
@@ -265,9 +266,9 @@ public class MyNetworkManager : MonoBehaviour
   {
 	myClient.RegisterHandler (MsgType.Connect, OnConnected);
 	cameraRig.SetActive (true); // transitively enables VIVE controllers
-	if (!localRun) {
-	  //videoChat.gameObject.SetActive (true);
-	}
+	//if (!localRun) {
+	//  videoChat.gameObject.SetActive (true);
+	//}
 	isAtStartup = false;
   }
 
@@ -304,14 +305,14 @@ public class MyNetworkManager : MonoBehaviour
     public void GetCachedCartesianCommands()
     {
         GetCachedCartesianCommandsMessage m = new GetCachedCartesianCommandsMessage();
-        myClient.Send(MyMsgTypes.MSG_GET_CARTESIAN_COMMANDS, m);
+        myClient.Send(MyMsgTypes.MSG_GET_CACHED_CARTESIAN_COMMANDS, m);
     }
 
 
-    // Charlie separated these functions
+    // Sets a global var in ARM_32.CPP / DLL, does not send a move command yet
     public void SetArmPositions(bool rightArm, float x, float y, float z, float thetaX, float thetaY, float thetaZ)
     {
-        Debug.Log("set arm position");
+        // Debug.Log("set arm position: " + x + "," + y + "," + z + ",");
         SetArmPositionMessage m = new SetArmPositionMessage();
         m.rightArm = rightArm;
         m.x = x;
@@ -325,7 +326,7 @@ public class MyNetworkManager : MonoBehaviour
 
     public void SetFingerPosition(bool rightArm, float fp1, float fp2, float fp3)
     {
-        //Debug.Log("send set finger position: "+fp1);
+        // Debug.Log("send set finger position: " + fp1 +","+fp2+","+fp3);
         SetFingerPositionMessage m = new SetFingerPositionMessage();
         m.rightArm = rightArm;
         m.fp1 = fp1;
@@ -334,11 +335,12 @@ public class MyNetworkManager : MonoBehaviour
         myClient.Send(MyMsgTypes.MSG_SET_FINGER_POSITION, m);
     }
 
-
     public void MoveArmUpdate() {
         MoveArmUpdateMessage m = new MoveArmUpdateMessage();
         myClient.Send(MyMsgTypes.MSG_MOVE_ARM_UPDATE, m);
     }
+
+
 
     public void FreezePosition() {
        
@@ -346,38 +348,37 @@ public class MyNetworkManager : MonoBehaviour
         // Better solution is to save frozen variables as global and not let them change until FROZEN is unlcoked.
         // Even better, call a Stop command on the robot and don't update ANY values until it's unfrozen (safer)
         FreezePositionMessage m = new FreezePositionMessage();
-        myClient.Send(MyMsgTypes.MSG_STOP_ARM, m);
-        //Debug.Log("<color=blue>FROZEN</color>");
+        //myClient.Send(MyMsgTypes.MSG_STOP_ARM, m);
+        myClient.Send(MyMsgTypes.MSG_FREEZE_POSITION, m);
+        // Debug.Log("<color=blue>FROZEN</color>");
         FindObjectOfType<HUD>().canMoveRobot.text = "Disabled";
         FindObjectOfType<HUD>().canMoveRobot.color = Color.red;
-
     }
 
 
 
     ////shawn test
-    //public void SendMoveArmWithFingers(bool rightArm, float x, float y, float z, float thetaX, float thetaY, float thetaZ, float fp1, float fp2, float fp3)
-    //{
-    //    if (!connectedToServer)
-    //    {
-    //        Debug.LogError("Not connected to server!");
-    //        return;
-    //    }
-    //    Debug.Log("Sending move " + ArmSide(rightArm) + " arm...");
-    //    MoveArmWithFingersMessage m = new MoveArmWithFingersMessage();
-    //    m.rightArm = rightArm;
-    //    m.x = x;
-    //    m.y = y;
-    //    m.z = z;
-    //    m.thetaX = thetaX;
-    //    m.thetaY = thetaY;
-    //    m.thetaZ = thetaZ;
-    //    m.fp1 = fp1;
-    //    m.fp2 = fp2;
-    //    m.fp3 = fp3;
-
-    //    myClient.Send(MyMsgTypes.MSG_MOVE_ARM_CARTESIAN_POSITION_WITH_FINGERS, m);
-    //}
+    public void SendMoveArmWithFingers(bool rightArm, float x, float y, float z, float thetaX, float thetaY, float thetaZ, float fp1, float fp2, float fp3)
+    {
+        if (!connectedToServer)
+        {
+            Debug.LogError("Not connected to server!");
+            return;
+        }
+        Debug.Log("Sending move " + ArmSide(rightArm) + " arm...");
+        MoveArmWithFingersMessage m = new MoveArmWithFingersMessage();
+        m.rightArm = rightArm;
+        m.x = x;
+        m.y = y;
+        m.z = z;
+        m.thetaX = thetaX;
+        m.thetaY = thetaY;
+        m.thetaZ = thetaZ;
+        m.fp1 = fp1;
+        m.fp2 = fp2;
+        m.fp3 = fp3;
+        myClient.Send(MyMsgTypes.MSG_MOVE_ARM_CARTESIAN_POSITION_WITH_FINGERS, m);
+    }
 
     //public void SendMoveArmAngularVelocity(bool rightArm, float av1, float av2, float av3, float av4, float av5, float av6, float av7)
     //{
@@ -467,29 +468,29 @@ public class MyNetworkManager : MonoBehaviour
     //}
 
     // end shawn test 10.1.17
-    public void SendMoveArm (bool rightArm, float x, float y, float z, float thetaX, float thetaY, float thetaZ)
-  {
+ //   public void SendMoveArm (bool rightArm, float x, float y, float z, float thetaX, float thetaY, float thetaZ)
+ // {
    
 
-	Debug.Log ("Sending move " + ArmSide(rightArm) + " arm...");
-    MoveArmMessage m = new MoveArmMessage();
-    m.rightArm = rightArm;
-    m.x = x;
-    m.y = y;
-    m.z = z;
-    m.thetaX = thetaX;
-    m.thetaY = thetaY;
-    m.thetaZ = thetaZ;
+	//Debug.Log ("Sending move " + ArmSide(rightArm) + " arm...");
+ //   MoveArmMessage m = new MoveArmMessage();
+ //   m.rightArm = rightArm;
+ //   m.x = x;
+ //   m.y = y;
+ //   m.z = z;
+ //   m.thetaX = thetaX;
+ //   m.thetaY = thetaY;
+ //   m.thetaZ = thetaZ;
 
-    myClient.Send (MyMsgTypes.MSG_MOVE_ARM, m);
-  }
+ //   myClient.Send (MyMsgTypes.MSG_MOVE_ARM, m);
+ // }
 
-  private void ReceiveMoveArm (NetworkMessage message)
-  {
-	MoveArmMessage m = message.ReadMessage<MoveArmMessage>();
-	Debug.Log ("Move " + ArmSide(m.rightArm) + " arm received!");
-    KinovaAPI.MoveHand(m.rightArm, m.x, m.y, m.z, m.thetaX, m.thetaY, m.thetaZ);
-  }
+ // private void ReceiveMoveArm (NetworkMessage message)
+ // {
+	//MoveArmMessage m = message.ReadMessage<MoveArmMessage>();
+	//Debug.Log ("Move " + ArmSide(m.rightArm) + " arm received!");
+ //   KinovaAPI.MoveHand(m.rightArm, m.x, m.y, m.z, m.thetaX, m.thetaY, m.thetaZ);
+ // }
 
  // public void SendMoveArmNoThetaY (bool rightArm, float x, float y, float z, float thetaX, float thetaZ)
  // {
@@ -507,26 +508,25 @@ public class MyNetworkManager : MonoBehaviour
  //   myClient.Send (MyMsgTypes.MSG_MOVE_ARM_NO_THETAY, m);
  // }
     
-  public void SendMoveArmHome (bool rightArm)
-  {
+ // public void SendMoveArmHome (bool rightArm)
+ // {
 
-	Debug.Log ("Sending move " + ArmSide (rightArm) + " arm home...");
-	MoveArmHomeMessage m = new MoveArmHomeMessage();
-    m.rightArm = rightArm;
+	//Debug.Log ("Sending move " + ArmSide (rightArm) + " arm home...");
+	//MoveArmHomeMessage m = new MoveArmHomeMessage();
+ //   m.rightArm = rightArm;
 
-    myClient.Send (MyMsgTypes.MSG_MOVE_ARM_HOME, m);
-  }
+ //   myClient.Send (MyMsgTypes.MSG_MOVE_ARM_HOME, m);
+ // }
     
   public void SendStopArm (bool rightArm, bool suppressLog)
   {
 	
-	    if (!suppressLog) {
-	      Debug.Log ("Sending stop " + ArmSide (rightArm) + " arm...");
-	    }
+
         StopArmMessage m = new StopArmMessage();
         m.rightArm = rightArm;
+
         m.suppressLog = suppressLog;
-        //Debug.Log("stoparm");
+       // Debug.Log("<color=red>Send stop arm at </color>"+Time.time);
         myClient.Send (MyMsgTypes.MSG_STOP_ARM, m);
   }
     

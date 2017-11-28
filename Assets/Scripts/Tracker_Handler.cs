@@ -61,12 +61,13 @@ public class Tracker_Handler : MonoBehaviour
     public bool firstrun = true;
 
     public float moveFrequency = 0.005f; // XXX change to 10ms to match controller loop seconds //IMPORTANT: Make sure this carries over to the 64-bit Unity 2017 version of the code.
-    public float unlockFrequency = 0.5f; // every x seconds the StopArm is called. This clears the tragectory buffer 
-                                         //Testing different values of unlock Frequency now
-                                         //Test 1: unlockFrequency = 0.05, Result: arms seemed to move slower than 0.5
-                                         //Test 2: unlockFrequency = 1, Result: arms seemed to move even slower
-                                         //Test 3: unlockFrequency = 0.1, Results: arms reacted somewhat similarly but 
-
+    // Turns out we need only one of "moveFrequency" or "unlockFrequncey", and the Stop() and Move() commands bein synced makes the robot move predictably.
+    //public float unlockFrequency = 0.5f; // every x seconds the StopArm is called. This clears the tragectory buffer 
+    //                                     //Testing different values of unlock Frequency now
+    //                                     //Test 1: unlockFrequency = 0.05, Result: arms seemed to move slower than 0.5
+    //                                     //Test 2: unlockFrequency = 1, Result: arms seemed to move even slower
+    //                                     //Test 3: unlockFrequency = 0.1, Results: arms reacted somewhat similarly but 
+    //public float unlockFrequencyCount = 0.0f;
     public float roboMoveCount = 0.0f; // seconds temp that counts if time has elapsed greater than the move frequency. If it is send the command
 
     private Valve.VR.EVRButtonId triggerButton = Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger;    //Map VIVE trigger button to ID
@@ -80,27 +81,25 @@ public class Tracker_Handler : MonoBehaviour
     private bool gripButtonPressed = false;             //True when side grip buttons button is being held down
 
     // Charlie's toggle grip
-    float finger1pos = 0f;
-    float finger2pos = 0f;
-    float finger3pos = 0f;
+   
     bool gripMoving = false;
     float gripMovingTimeout = 0f;
+    bool gripToggled = false; //XXX Move up
     // hair trigger is axis 1.x
     // barley pressed 0.05
     // fully pressed 0.85-1
-    bool clasped = false; //XXX Move up
-    bool gripToggleReady = false;
+
     float deadGripThreshhold = 0.05f;
 
 
 
-    private Valve.VR.EVRButtonId touchpad = Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad;
-    private Valve.VR.EVRButtonId menuButton = Valve.VR.EVRButtonId.k_EButton_ApplicationMenu;
+    // private Valve.VR.EVRButtonId touchpad = Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad;
+    // private Valve.VR.EVRButtonId menuButton = Valve.VR.EVRButtonId.k_EButton_ApplicationMenu;
 
     public SteamVR_TrackedController controller;        // { get { return SteamVR_Controller.Input ((int)trackedHandObj.index); } }
-    private SteamVR_TrackedObject trackedHandObj;
+  //  private SteamVR_TrackedObject trackedHandObj;
 
-    private GameObject pickup;                          //Used by Unity3D collider and rigid body components to allow user interaction
+    //private GameObject pickup;                          //Used by Unity3D collider and rigid body components to allow user interaction
 
     public MyNetworkManager myNetworkManager;
 
@@ -118,7 +117,7 @@ public class Tracker_Handler : MonoBehaviour
     void Awake()
     {
         //Gets the SteamVR_TrackedObject for the controller or tracker this script is attached to
-        trackedHandObj = GetComponent<SteamVR_TrackedObject>();
+        //trackedHandObj = GetComponent<SteamVR_TrackedObject>();
 
         //IMPORTANT: Make sure the moveFrequency is set to 0.005 seconds in the UI
 
@@ -126,34 +125,35 @@ public class Tracker_Handler : MonoBehaviour
         //InvokeRepeating("MoveArmToControllerPosition", 0.0f, moveFrequency);
 
 
-        SetStopTimeout(unlockFrequency, unlockFrequency);
-
+        //SetStopTimeoutAndMoveFrequency(unlockFrequency);
         controller.MenuButtonClicked += new ClickedEventHandler(ToggleGrip);
-
-
     }
 
-    void SetStopTimeout(float beginAfterSeconds, float repeatInterval) {
-        
-        InvokeRepeating("UnlockArm", beginAfterSeconds, repeatInterval);
 
-    }
+    //void SetStopTimeoutAndMoveFrequency(float si) {
+    //    unlockFrequency = si;
+    //    moveFrequency = si;
+    //   //CancelInvoke();
+    //    //InvokeRepeating("UnlockArm", beginAfterSeconds, repeatInterval);
+    //    FindObjectOfType<HUD>().stopInterval.text = unlockFrequency.ToString();
+    //}
 
     void Start () // 
 	{
-        
+        SetArmPose(readyToToast);
     } //END START() FUNCTION
 
     void Update()  //architecture dependant
     {
-        
+        FindObjectOfType<HUD>().gripMovingTimeout.text = gripMovingTimeout.ToString();
         if (gripMoving && gripMovingTimeout > 0)
         {
             gripMovingTimeout -= Time.deltaTime;  //timeout during which the robot does not move for grip time
         }
         else if (gripMoving) {
             gripMoving = false;
-            SetStopTimeout(unlockFrequency,unlockFrequency);
+            FindObjectOfType<HUD>().gripMoving.text = "False";
+            //SetStopTimeoutAndMoveFrequency(unlockFrequency);
         }
         //   Debug.Log("axis 4:" + controller.controllerState.rAxis1.x);
     }
@@ -191,89 +191,140 @@ public class Tracker_Handler : MonoBehaviour
             firstrun = true;
         }
         return flag;
-    }  
+    }
+
+    class CartesianCommandToSend {
+        public float x = 0;
+        public float y = 0;
+        public float z = 0;
+        public float thetaX = 0;
+        public float thetaY = 0;
+        public float thetaZ = 0;
+        public float fp1 = 0;
+        public float fp2 = 0;
+        public float fp3 = 0;
+        public CartesianCommandToSend(
+            float _x=-.5f, 
+            float _y=.3f, 
+            float _z=-0.1f, 
+            float _thetaX=0f,
+            float _thetaY=0f, 
+            float _thetaZ=0f, 
+            float _fp1=0f, 
+            float _fp2=0f, 
+            float _fp3=0f) {
+            x = _x;
+            y = _y;
+            z = _z;
+            thetaX = _thetaX;
+            thetaY = _thetaY;
+            thetaZ = _thetaZ;
+            fp1 = _fp1;
+            fp2 = _fp2;
+            fp3 = _fp3;
+        }
+    }
+
+    CartesianCommandToSend readyToToast = new CartesianCommandToSend(-0.5129154f, 0.3196311f, -0.1113982f, 2.732836f, -1.511767f, -0.4928809f, fingerOpenedPos, fingerOpenedPos, fingerOpenedPos);
+   // -0.5129154, 0.3196311, -0.1113982, 2.732836, -1.511767, -0.4928809 // these values place the arm front and center ready to toast.
+
+
+    void SetArmPose(CartesianCommandToSend pose) {
+
+        // Make sure to call this so that the FIRST command that is sent the robot is already a pose (not 0,0,0,0,0)
+        cartesianCommandToSend = new CartesianCommandToSend(
+            pose.x,
+            pose.y,
+            pose.z,
+            pose.thetaX,
+            pose.thetaY,
+            pose.thetaZ,
+            pose.fp1,
+            pose.fp2,
+            pose.fp3
+            );
+    }
+    static float fingerClosedPos = 7000f;
+    static float fingerOpenedPos = 3500f;
+
+    CartesianCommandToSend cartesianCommandToSend = new CartesianCommandToSend();
 
     void ToggleGrip(object sender, ClickedEventArgs e)
     {
-        clasped = !clasped;
-        gripMoving = true;
-        gripMovingTimeout = 2f;
-        //Debug.Log("Toggle grip:" + clasped);
-        float fingerStopTimeoutSpeed = 1f; // so that fingers close smoothly. TODO: separate Stop() function beteween arm motors and finger motors.
-        SetStopTimeout(fingerStopTimeoutSpeed, fingerStopTimeoutSpeed);
-        if (clasped)
+        // Begin opening or closing the grip.
+        // During this time the hand should be frozen? or not?
+        gripToggled = !gripToggled;
+        if (gripToggled)
         {
             FindObjectOfType<HUD>().gripStatus.text = "Closed";
             FindObjectOfType<HUD>().gripStatus.color = new Color(0, 0, .6f);
             //Debug.Log("<color=green>grip is ON</color> ");
-            finger1pos = 7000f;
-            finger2pos = 7000f;
-          //  finger3pos = 7000f;
+            cartesianCommandToSend.fp1 = fingerClosedPos;
+            cartesianCommandToSend.fp2 = fingerClosedPos;
+                //finger3pos = 7000f;
         }
         else
         {
+            cartesianCommandToSend.fp1 = fingerOpenedPos;
+            cartesianCommandToSend.fp2 = fingerOpenedPos;
             FindObjectOfType<HUD>().gripStatus.text = "Open";
             FindObjectOfType<HUD>().gripStatus.color = new Color(.3f,.3f, 1);
             //Debug.Log("<color=red>grip is OFF</color> ");
-            finger1pos = 2500f;
-            finger2pos = 2500f;
-          //  finger3pos = 4000f;
+            //  finger3pos = 4000f;
         }
+
+        // while gripmoving is true, no further updates to position will be sent until timeout expires.
+       // myNetworkManager.FreezePosition();
+        gripMoving = true;
+        FindObjectOfType<HUD>().gripMoving.text = "True";
+        gripMovingTimeout = 1f;
+        float fingerStopTimeoutSpeed = 0.5f; // so that fingers close smoothly. TODO: separate Stop() function beteween arm motors and finger motors.
+        /*SetStopTimeoutAndMoveFrequency*///(fingerStopTimeoutSpeed);
+        //myNetworkManager.MoveArmUpdate();
     }
     
 
     void KP_MoveArmToControllerPosition()
     {
        Vector3 trackerPosition = GetGlobalPosition();  
-            float pi = Mathf.PI;
-         Vector3 tempTrans;
-         Vector3 tempRot;
+        float pi = Mathf.PI;
 
-        if (!gripMoving && HoldingDeadTrigger()) {
-            tempTrans.x = initialTrackerPosition.x + RobotPosition.x;
-            tempTrans.y = initialTrackerPosition.y + RobotPosition.y;
-            tempTrans.z = initialTrackerPosition.z + RobotPosition.z;
-            tempRot.x = initialTrackerRotation.x + RobotRotation.x;
-            tempRot.y = initialTrackerRotation.y + RobotRotation.y;
-            tempRot.z = initialTrackerRotation.z + RobotRotation.z;
 
-            newRobotPosition.z = RobotPosition.z + trackerPosition.z - initialTrackerPosition.z;
-
-            myNetworkManager.SetArmPositions(true,
-              trackerPosition.z  + OffsetZ,
-              -trackerPosition.y + OffsetY,
-              -trackerPosition.x + OffsetX,
-             ( (transform.localRotation.eulerAngles.x * (pi / 180.0f) +pi )),
-             (-(transform.localRotation.eulerAngles.y * (pi / 180.0f)-pi/2 )),
-             (-(transform.localRotation.eulerAngles.z * (pi / 180.0f) - pi)) 
-             );
-            // Original
-            //((transform.localRotation.eulerAngles.x * (pi / 180.0f) - pi)),
-            // (-(transform.localRotation.eulerAngles.y * (pi / 180.0f) - pi / 2)),
-            // (-(transform.localRotation.eulerAngles.z * (pi / 180.0f) - pi))
-
-            Debug.Log("sending arm pos");
-        } else {
-            //Debug.Log("gripmoving;" + gripMoving + ", holddead;" + HoldingDeadTrigger());
-            //Debug.Log("sending finger pos 1,2,3:" + finger1pos + "," + finger2pos + "," + finger3pos);
-            //myNetworkManager.FreezePosition();
-            myNetworkManager.SetFingerPosition(true,
-                                                finger1pos,
-                                                finger2pos,
-                                                finger3pos
-            );
-        }
-
-        if (HoldingDeadTrigger())
+        if (!gripMoving && HoldingDeadTrigger())
         {
-            myNetworkManager.MoveArmUpdate();
+            // Only update the target move position if we're not opening/closeing the hand && we're holding dead trigger.
+            cartesianCommandToSend.x = trackerPosition.z + OffsetZ;
+            cartesianCommandToSend.y = -trackerPosition.y + OffsetY;
+            cartesianCommandToSend.z = -trackerPosition.x + OffsetX;
+            cartesianCommandToSend.thetaX = ((transform.localRotation.eulerAngles.x * (pi / 180.0f) + pi));
+            cartesianCommandToSend.thetaY = (-(transform.localRotation.eulerAngles.y * (pi / 180.0f) - pi / 2));
+            cartesianCommandToSend.thetaZ = (-(transform.localRotation.eulerAngles.z * (pi / 180.0f) - pi));
+            
         }
+
+
+        // Send the move arm every frame
+        StopArm();
+        myNetworkManager.SendMoveArmWithFingers(
+            true,
+             cartesianCommandToSend.x,
+             cartesianCommandToSend.y,
+             cartesianCommandToSend.z,
+             cartesianCommandToSend.thetaX,
+             cartesianCommandToSend.thetaY,
+             cartesianCommandToSend.thetaZ,
+             cartesianCommandToSend.fp1,
+             cartesianCommandToSend.fp2,
+             cartesianCommandToSend.fp3
+        );
+
+
     }
 
-    void SendMoveArmWithOffsets(bool rightArm, float x, float y, float z, float thetaX, float thetaY, float thetaZ)
-    {
-        myNetworkManager.SendMoveArm(true, x+OffsetX, y+OffsetY, z+OffsetZ, thetaOffsetX+thetaX, thetaOffsetY+thetaY, thetaOffsetZ+thetaZ);
-    }
+    //void SendMoveArmWithOffsets(bool rightArm, float x, float y, float z, float thetaX, float thetaY, float thetaZ)
+    //{
+    //    myNetworkManager.SendMoveArm(true, x+OffsetX, y+OffsetY, z+OffsetZ, thetaOffsetX+thetaX, thetaOffsetY+thetaY, thetaOffsetZ+thetaZ);
+    //}
 
 	void FixedUpdate ()
 	{
@@ -284,14 +335,22 @@ public class Tracker_Handler : MonoBehaviour
             return;
         }
 
-        Vector3 controllerPosition = GetGlobalPosition ();
-		Vector3 controllerRotation = GetLocalRotation ();
-		roboMoveCount += Time.deltaTime;
-        if (roboMoveCount > moveFrequency)
+  //      Vector3 controllerPosition = GetGlobalPosition ();
+		//Vector3 controllerRotation = GetLocalRotation ();
+		roboMoveCount -= Time.deltaTime;
+        //unlockFrequencyCount -= Time.deltaTime;
+        if (roboMoveCount < 0)
         {
-           KP_MoveArmToControllerPosition();
-           roboMoveCount = 0.0f;
+            
+            KP_MoveArmToControllerPosition();
+            roboMoveCount = moveFrequency;
 		}
+
+        //if (unlockFrequencyCount < 0) {
+        //    UnlockArm();
+        //    unlockFrequencyCount = unlockFrequency;
+        //}
+
   //      //following code is not consistent
 		//if (Main.DEBUG_STATEMENTS_ON && LOCAL_DEBUG_STATEMENTS_ON) {
 		//	Debug.Log ("Controller #" + (int)trackedHandObj.index + " POSITION is:");
@@ -313,7 +372,7 @@ public class Tracker_Handler : MonoBehaviour
         
 	}//END FixedUpdate() FUNCTION
 
-    void UnlockArm ()
+    void StopArm ()
 	{
 		if (autoUnlockingEnabled) {
             if (myNetworkManager.isConnectedToServer()) {
@@ -325,42 +384,42 @@ public class Tracker_Handler : MonoBehaviour
    * meters for x, y, z
    * radians for thetaX, thetaY, thetaZ
    **/
-        void MoveArm (float x, float y, float z, float thetaX, float thetaY, float thetaZ)
-	{
-		try {
+ //       void MoveArm (float x, float y, float z, float thetaX, float thetaY, float thetaZ)
+	//{
+	//	try {
             
-			myNetworkManager.SendMoveArm (rightArm, x, y, z, thetaX, thetaY, thetaZ);
+	//		myNetworkManager.SendMoveArm (rightArm, x, y, z, thetaX, thetaY, thetaZ);
 
-		} catch (EntryPointNotFoundException e) {
-			Debug.Log (e.Data);
-			Debug.Log (e.GetType ());
-			Debug.Log (e.GetBaseException ());
-		}
-	}
+	//	} catch (EntryPointNotFoundException e) {
+	//		Debug.Log (e.Data);
+	//		Debug.Log (e.GetType ());
+	//		Debug.Log (e.GetBaseException ());
+	//	}
+	//}
 	/**@brief OnTriggerEnter() is called on collider trigger events.
    * 
    * section DESCRIPTION
    * 
    * OnTriggerEnter(): TO-DO???
    */
-	private void OnTriggerEnter (Collider collider)
-	{
-		if (Main.DEBUG_STATEMENTS_ON)
-			Debug.Log ("Colllider trigger ENTER");
-		pickup = collider.gameObject;
-	}
-	/**@brief OnTriggerExit() is called on collider trigger events.
-   * 
-   * section DESCRIPTION
-   * 
-   * OnTriggerEnter(): TO-DO???
-   */
-	private void OnTriggerExit (Collider collider)
-	{
-		if (Main.DEBUG_STATEMENTS_ON)
-			Debug.Log ("Colllider trigger EXIT");
-		pickup = null;
-	}
+	//private void OnTriggerEnter (Collider collider)
+	//{
+	//	if (Main.DEBUG_STATEMENTS_ON)
+	//		Debug.Log ("Colllider trigger ENTER");
+	//	//pickup = collider.gameObject;
+	//}
+	///**@brief OnTriggerExit() is called on collider trigger events.
+ //  * 
+ //  * section DESCRIPTION
+ //  * 
+ //  * OnTriggerEnter(): TO-DO???
+ //  */
+	//private void OnTriggerExit (Collider collider)
+	//{
+	//	if (Main.DEBUG_STATEMENTS_ON)
+	//		Debug.Log ("Colllider trigger EXIT");
+	//	pickup = null;
+	//}
 	/**@brief GetGlobalPosition() returns X, Y, Z coordinate of hand controller  
  * 
  * section DESCRIPTION
