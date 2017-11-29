@@ -195,7 +195,6 @@ public class MyNetworkManager : MonoBehaviour
 
   private bool isAtStartup = true;
   private bool connectedToServer = false;
-  private bool localRun = false;
 
   public static bool isServer = false;
     
@@ -258,7 +257,7 @@ public class MyNetworkManager : MonoBehaviour
   {
 	myClient = ClientScene.ConnectLocalServer ();
 	InitClient ();
-	//videoChat.remoteView.GetComponent<CameraController>().StartLocalStream();
+	videoChat.remoteView.GetComponent<CameraController>().StartLocalStream();
 	Debug.Log ("Started local client");
   }
 
@@ -266,10 +265,9 @@ public class MyNetworkManager : MonoBehaviour
   {
 	myClient.RegisterHandler (MsgType.Connect, OnConnected);
 	cameraRig.SetActive (true); // transitively enables VIVE controllers
-	//if (!localRun) {
-	//  videoChat.gameObject.SetActive (true);
-	//}
-	isAtStartup = false;
+
+    videoChat.gameObject.SetActive(true);
+    isAtStartup = false;
   }
 
   // Client function
@@ -278,16 +276,16 @@ public class MyNetworkManager : MonoBehaviour
 	    Debug.Log ("Connected to server on " + address + ":" + port);
         FindObjectOfType<HUD>().connected.text = "Connected";
         FindObjectOfType<HUD>().connected.color = Color.green;
-        if (!localRun) {
+        if (!isServer) {
 
-	  //Invoke ("JoinVideoChat", 3.0f);
-	}
+	      Invoke ("JoinVideoChat", 3.0f);
+	    }
 	connectedToServer = true;
   }
 
   private void JoinVideoChat ()
   {
-	videoChat.JoinVideoChat ();
+	//videoChat.JoinVideoChat ();
   }
 
 

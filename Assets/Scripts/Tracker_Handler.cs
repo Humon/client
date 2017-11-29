@@ -225,7 +225,17 @@ public class Tracker_Handler : MonoBehaviour
         }
     }
 
-    CartesianCommandToSend readyToToast = new CartesianCommandToSend(-0.5129154f, 0.3196311f, -0.1113982f, 2.732836f, -1.511767f, -0.4928809f, fingerOpenedPos, fingerOpenedPos, fingerOpenedPos);
+    CartesianCommandToSend readyToToast = new CartesianCommandToSend(
+        -0.5129154f, 
+        0.3196311f, 
+        -0.1113982f, 
+        2.732836f, 
+        -1.511767f, 
+        -0.4928809f, 
+        fingerOpenedPos,
+        fingerOpenedPos, 
+        fingerOpenedPos
+        );
    // -0.5129154, 0.3196311, -0.1113982, 2.732836, -1.511767, -0.4928809 // these values place the arm front and center ready to toast.
 
 

@@ -59,7 +59,7 @@ public class VideoChatExample : MonoBehaviour {
 		VideoChat.SetEchoCancellation( echoCancellation );
 
 		//Initialize to set base parameters such as the actual WebCamTexture height and width
-	//	VideoChat.Init( 0, framerate );
+		VideoChat.Init( 0, framerate );
 		
 		//Add was created in case we need to defer the assignment of a remoteView until after it has been Network instantiated
 		//In this example we are not doing network instantiation but if we were, this would come in handy
@@ -137,7 +137,6 @@ public class VideoChatExample : MonoBehaviour {
 	}
 
 	void OnGUI () {
-        return;
 		if( !VideoChat.tempImage && !VideoChat.videoPrimed || !UI )
 			return;
 
@@ -199,6 +198,10 @@ public class VideoChatExample : MonoBehaviour {
 	
 	
 	void Update() {
+
+        if (Input.GetKeyDown(KeyCode.J)) {
+            JoinVideoChat();
+        }
 
 		// You can utilize VideoChat.receivedAudioPackets and VideoChat.receivedVideoPackets to save/record AV data coming over the network
 		// Otherwise, this clears those packets (not recording)
@@ -311,17 +314,14 @@ public class VideoChatExample : MonoBehaviour {
 
     void ConnectToRicohThetaS ()
     {
-        Debug.Log("try connect");
         List<WebCamDevice> cameras = VideoChat.webCamDevices;
         int cameraIndex = 0;
-
         for (int i = 0; i < cameras.Count; i++)
         {
-            Debug.Log("camera;" + cameras[i].name);
-            if (cameras[i].name.Equals("Logitech USB Camera"))
+            if (cameras[i].name.Equals("RICOH THETA S"))
             {
                 cameraIndex = i;
-                Debug.Log("Logitech USB Camera!");
+                Debug.Log("Found Ricoh Theta S!");
                 break;
             }
         }
@@ -348,9 +348,12 @@ public class VideoChatExample : MonoBehaviour {
 			for( int i = 0; i < Network.connections.Length; i++ )
 				Network.RemoveRPCs( Network.connections[ 0 ], VideoChat.videoGroup );
 		}
+       //  Debug.Log("video tovideo:" + x + "," + y + "," + videoData.Length + "," + System.Convert.ToDouble(timestamp).ToString());
 		VideoChat.ToVideo( x, y, videoData, System.Convert.ToDouble( timestamp ) );
 		if( !testMode && oneToManyBroadcast && Network.peerType != NetworkPeerType.Server )
+        {
 			videoView.RPC( "ReceiveVideo", RPCMode.Server, VideoChat.requestedWidth, VideoChat.requestedHeight, new byte[ 3 ], System.Convert.ToString( VideoChat.CurrentTimestamp() ) );
+        }
 	}
 	
 	[RPC]
