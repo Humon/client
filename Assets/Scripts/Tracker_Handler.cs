@@ -45,9 +45,9 @@ public class Tracker_Handler : MonoBehaviour
     public bool autoUnlockingEnabled = true; // When enabled StopArm is called. This happens every update
 
     //Full Range Demo Mode and Offset
-    private float OffsetX = -0.50f;// -0.5f; -1.04 // robot left?
-    private float OffsetY = 1.30f; // 1.2f; 0.8 // robot forwards?
-    private float OffsetZ = -0.0f; // -0.5f; -0.53
+    public float OffsetX = 0.4f;// -0.5f; -1.04 // robot left? (so negative is robot right?)
+    public float OffsetY = -1.4f; // 1.2f; 0.8 // Definitely a global up.
+    public float OffsetZ = -0.0f; // -0.5f; -0.53
     private float thetaOffsetX = 0.0f;
     private float thetaOffsetY = 0.0f;
     private float thetaOffsetZ = 0.0f;
@@ -231,7 +231,7 @@ public class Tracker_Handler : MonoBehaviour
             );
     }
     static float fingerClosedPos = 7000f;
-    static float fingerOpenedPos = 3500f;
+    static float fingerOpenedPos = 0f;
 
     CartesianPosition cartesianCommandToSend = new CartesianPosition();
 
@@ -273,7 +273,7 @@ public class Tracker_Handler : MonoBehaviour
     Vector3 GetCurrentOffset() {
         // Ask robot where it is
 
-        return Vector3.zero;
+        return new Vector3(OffsetX,OffsetY,OffsetZ);
     }
 
     void KP_MoveArmToControllerPosition()
