@@ -44,8 +44,8 @@ public class Tracker_Handler : MonoBehaviour
     public bool autoUnlockingEnabled = true; // When enabled StopArm is called. This happens every update
 
     //Full Range Demo Mode and Offset
-    private float OffsetX = -0.50f;//-0.5f; -1.04
-    private float OffsetY = 1.30f; //1.2f; 0.8
+    private float OffsetX = -0.50f;//-0.5f; -1.04 // robot left?
+    private float OffsetY = 1.30f; //1.2f; 0.8 // robot forwards?
     private float OffsetZ = -0.0f; //-0.5f; -0.53
     private float thetaOffsetX = 0.0f;
     private float thetaOffsetY = 0.0f;
@@ -292,16 +292,20 @@ public class Tracker_Handler : MonoBehaviour
         /*SetStopTimeoutAndMoveFrequency*///(fingerStopTimeoutSpeed);
         //myNetworkManager.MoveArmUpdate();
     }
-    
+
+
+    Vector3 GetCurrentOffset() {
+        return Vector3.zero;
+    }
 
     void KP_MoveArmToControllerPosition()
     {
-       Vector3 trackerPosition = GetGlobalPosition();  
-        float pi = Mathf.PI;
+       Vector3 trackerPosition = GetGlobalPosition() + GetCurrentOffset();  
 
 
         if (!gripMoving && HoldingDeadTrigger())
         {
+            float pi = Mathf.PI;
             // Only update the target move position if we're not opening/closeing the hand && we're holding dead trigger.
             cartesianCommandToSend.x = trackerPosition.z + OffsetZ;
             cartesianCommandToSend.y = -trackerPosition.y + OffsetY;
@@ -309,26 +313,36 @@ public class Tracker_Handler : MonoBehaviour
             cartesianCommandToSend.thetaX = ((transform.localRotation.eulerAngles.x * (pi / 180.0f) + pi));
             cartesianCommandToSend.thetaY = (-(transform.localRotation.eulerAngles.y * (pi / 180.0f) - pi / 2));
             cartesianCommandToSend.thetaZ = (-(transform.localRotation.eulerAngles.z * (pi / 180.0f) - pi));
-            
+            SendCurrentCommand();
+        }
+        else if (gripMoving) {
+
+            // The fingers have received their new destinations in cartesianCommandToSend, 
+            // and we need to send the signal every frame until the fingers arrive (currently assumed after some fixed timeout.)
+            SendCurrentCommand();
         }
 
 
-        // Send the move arm every frame
-        StopArm();
+       
+
+
+    }
+
+    void SendCurrentCommand() {
+        StopArm(); // clear all trajectories
+        // send the values we stored in cartesianCommandtoSend
         myNetworkManager.SendMoveArmWithFingers(
-            true,
-             cartesianCommandToSend.x,
-             cartesianCommandToSend.y,
-             cartesianCommandToSend.z,
-             cartesianCommandToSend.thetaX,
-             cartesianCommandToSend.thetaY,
-             cartesianCommandToSend.thetaZ,
-             cartesianCommandToSend.fp1,
-             cartesianCommandToSend.fp2,
-             cartesianCommandToSend.fp3
-        );
-
-
+           true,
+            cartesianCommandToSend.x,
+            cartesianCommandToSend.y,
+            cartesianCommandToSend.z,
+            cartesianCommandToSend.thetaX,
+            cartesianCommandToSend.thetaY,
+            cartesianCommandToSend.thetaZ,
+            cartesianCommandToSend.fp1,
+            cartesianCommandToSend.fp2,
+            cartesianCommandToSend.fp3
+       );
     }
 
     //void SendMoveArmWithOffsets(bool rightArm, float x, float y, float z, float thetaX, float thetaY, float thetaZ)

@@ -237,15 +237,16 @@ public class VideoChatExample : MonoBehaviour {
 				return;
 			}
 		}
-		
+        int numPackets = 0;
 		#region AUDIO
+        /*
 		VideoChat.audioThreshold = audioThreshold;
 
 		//Collect source audio, this will create a new AudioPacket and add it to the audioPackets list in the VideoChat static class
 		VideoChat.FromAudio();		
 
 		//Send the latest VideoChat audio packet for a local test or your networking library of choice, in this case Unity Networking
-		int numPackets = VideoChat.audioPackets.Count;				
+		numPackets = VideoChat.audioPackets.Count;				
 		AudioPacket[] tempAudioPackets = new AudioPacket[ numPackets ];
 		VideoChat.audioPackets.CopyTo( tempAudioPackets );
 		
@@ -259,6 +260,7 @@ public class VideoChatExample : MonoBehaviour {
 			
 			VideoChat.audioPackets.Remove( tempAudioPackets[ i ] );
 		}
+        */
 		#endregion
 		
 
