@@ -27,6 +27,15 @@ public class MyMsgTypes
 
     public static short MSG_GET_CACHED_CARTESIAN_COMMANDS = 1016;
 
+    public static short MSG_INIT_CLIENT_VIEW = 1017;
+    public static short MSG_GET_CART_POS_FROM_SERVER = 1018;
+
+}
+
+
+
+public class InitClientViewMessage : MessageBase {
+
 }
 public class GetCachedCartesianCommandsMessage : MessageBase
 {
@@ -202,9 +211,11 @@ public class MyNetworkManager : MonoBehaviour
 
     //public SampleUserPolling_ReadWrite handController;
 
+    
 
 
-    void Update ()
+
+   void Update ()
   {
 	//HandMoveDelay += Time.deltaTime;
 	if (isAtStartup) {
@@ -261,6 +272,10 @@ public class MyNetworkManager : MonoBehaviour
 	Debug.Log ("Started local client");
   }
 
+    void GetCartPosFromServer(NetworkMessage netMsg) {
+        // server should send us goodies.
+    }
+
   private void InitClient ()
   {
 	myClient.RegisterHandler (MsgType.Connect, OnConnected);
@@ -268,6 +283,8 @@ public class MyNetworkManager : MonoBehaviour
 
     videoChat.gameObject.SetActive(true);
     isAtStartup = false;
+        NetworkServer.Listen(port);
+        //NetworkServer.RegisterHandler(MyMsgTypes./*MSG_GET_CART_POS_FROM_SERVER*/, GetCartPosFromServer);
   }
 
   // Client function
@@ -280,7 +297,10 @@ public class MyNetworkManager : MonoBehaviour
 
 	      Invoke ("JoinVideoChat", 3.0f);
 	    }
-	connectedToServer = true;
+	    connectedToServer = true;
+        InitClientViewMessage m = new InitClientViewMessage();
+        myClient.Send(MyMsgTypes.MSG_INIT_CLIENT_VIEW, m); // allows server to talk to client.
+        //FindObjectOfType<ClientBroadcaster>().StartServer();
   }
 
   private void JoinVideoChat ()

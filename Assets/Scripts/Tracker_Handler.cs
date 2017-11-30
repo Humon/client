@@ -1,4 +1,5 @@
-﻿/** 
+﻿
+/** 
  * @file Tracker_Handler.cs
  * @author Various - Last MM
  * @date 11/25/2017
@@ -44,9 +45,9 @@ public class Tracker_Handler : MonoBehaviour
     public bool autoUnlockingEnabled = true; // When enabled StopArm is called. This happens every update
 
     //Full Range Demo Mode and Offset
-    private float OffsetX = -0.50f;//-0.5f; -1.04 // robot left?
-    private float OffsetY = 1.30f; //1.2f; 0.8 // robot forwards?
-    private float OffsetZ = -0.0f; //-0.5f; -0.53
+    private float OffsetX = -0.50f;// -0.5f; -1.04 // robot left?
+    private float OffsetY = 1.30f; // 1.2f; 0.8 // robot forwards?
+    private float OffsetZ = -0.0f; // -0.5f; -0.53
     private float thetaOffsetX = 0.0f;
     private float thetaOffsetY = 0.0f;
     private float thetaOffsetZ = 0.0f;
@@ -155,6 +156,11 @@ public class Tracker_Handler : MonoBehaviour
             FindObjectOfType<HUD>().gripMoving.text = "False";
             //SetStopTimeoutAndMoveFrequency(unlockFrequency);
         }
+
+        if (controller.padPressed)
+        {
+            SetArmPose(readyToToast);
+        }
         //   Debug.Log("axis 4:" + controller.controllerState.rAxis1.x);
     }
 
@@ -193,39 +199,9 @@ public class Tracker_Handler : MonoBehaviour
         return flag;
     }
 
-    class CartesianCommandToSend {
-        public float x = 0;
-        public float y = 0;
-        public float z = 0;
-        public float thetaX = 0;
-        public float thetaY = 0;
-        public float thetaZ = 0;
-        public float fp1 = 0;
-        public float fp2 = 0;
-        public float fp3 = 0;
-        public CartesianCommandToSend(
-            float _x=-.5f, 
-            float _y=.3f, 
-            float _z=-0.1f, 
-            float _thetaX=0f,
-            float _thetaY=0f, 
-            float _thetaZ=0f, 
-            float _fp1=0f, 
-            float _fp2=0f, 
-            float _fp3=0f) {
-            x = _x;
-            y = _y;
-            z = _z;
-            thetaX = _thetaX;
-            thetaY = _thetaY;
-            thetaZ = _thetaZ;
-            fp1 = _fp1;
-            fp2 = _fp2;
-            fp3 = _fp3;
-        }
-    }
+   
 
-    CartesianCommandToSend readyToToast = new CartesianCommandToSend(
+    CartesianPosition readyToToast = new CartesianPosition(
         -0.5129154f, 
         0.3196311f, 
         -0.1113982f, 
@@ -239,10 +215,10 @@ public class Tracker_Handler : MonoBehaviour
    // -0.5129154, 0.3196311, -0.1113982, 2.732836, -1.511767, -0.4928809 // these values place the arm front and center ready to toast.
 
 
-    void SetArmPose(CartesianCommandToSend pose) {
+    void SetArmPose(CartesianPosition pose) {
 
         // Make sure to call this so that the FIRST command that is sent the robot is already a pose (not 0,0,0,0,0)
-        cartesianCommandToSend = new CartesianCommandToSend(
+        cartesianCommandToSend = new CartesianPosition(
             pose.x,
             pose.y,
             pose.z,
@@ -257,7 +233,7 @@ public class Tracker_Handler : MonoBehaviour
     static float fingerClosedPos = 7000f;
     static float fingerOpenedPos = 3500f;
 
-    CartesianCommandToSend cartesianCommandToSend = new CartesianCommandToSend();
+    CartesianPosition cartesianCommandToSend = new CartesianPosition();
 
     void ToggleGrip(object sender, ClickedEventArgs e)
     {
@@ -295,6 +271,8 @@ public class Tracker_Handler : MonoBehaviour
 
 
     Vector3 GetCurrentOffset() {
+        // Ask robot where it is
+
         return Vector3.zero;
     }
 
@@ -307,9 +285,9 @@ public class Tracker_Handler : MonoBehaviour
         {
             float pi = Mathf.PI;
             // Only update the target move position if we're not opening/closeing the hand && we're holding dead trigger.
-            cartesianCommandToSend.x = trackerPosition.z + OffsetZ;
-            cartesianCommandToSend.y = -trackerPosition.y + OffsetY;
-            cartesianCommandToSend.z = -trackerPosition.x + OffsetX;
+            cartesianCommandToSend.x = trackerPosition.z;
+            cartesianCommandToSend.y = -trackerPosition.y;
+            cartesianCommandToSend.z = -trackerPosition.x;
             cartesianCommandToSend.thetaX = ((transform.localRotation.eulerAngles.x * (pi / 180.0f) + pi));
             cartesianCommandToSend.thetaY = (-(transform.localRotation.eulerAngles.y * (pi / 180.0f) - pi / 2));
             cartesianCommandToSend.thetaZ = (-(transform.localRotation.eulerAngles.z * (pi / 180.0f) - pi));
@@ -527,4 +505,39 @@ public class Tracker_Handler : MonoBehaviour
 		return acceleration;
 	}
 } //END HANDCONTROLLER CLASS
+
+// this data structure should live in a DataStructures file.
+public class CartesianPosition
+{
+    public float x = 0;
+    public float y = 0;
+    public float z = 0;
+    public float thetaX = 0;
+    public float thetaY = 0;
+    public float thetaZ = 0;
+    public float fp1 = 0;
+    public float fp2 = 0;
+    public float fp3 = 0;
+    public CartesianPosition(
+        float _x = -.5f,
+        float _y = .3f,
+        float _z = -0.1f,
+        float _thetaX = 0f,
+        float _thetaY = 0f,
+        float _thetaZ = 0f,
+        float _fp1 = 0f,
+        float _fp2 = 0f,
+        float _fp3 = 0f)
+    {
+        x = _x;
+        y = _y;
+        z = _z;
+        thetaX = _thetaX;
+        thetaY = _thetaY;
+        thetaZ = _thetaZ;
+        fp1 = _fp1;
+        fp2 = _fp2;
+        fp3 = _fp3;
+    }
+}
 
