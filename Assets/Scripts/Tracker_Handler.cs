@@ -45,12 +45,18 @@ public class Tracker_Handler : MonoBehaviour
     public bool autoUnlockingEnabled = true; // When enabled StopArm is called. This happens every update
 
     //Full Range Demo Mode and Offset
-    private float OffsetX = -0.50f;// -0.5f; -1.04 // robot left?
-    private float OffsetY = 1.30f; // 1.2f; 0.8 // robot forwards?
-    private float OffsetZ = -0.0f; // -0.5f; -0.53
-    private float thetaOffsetX = 0.0f;
-    private float thetaOffsetY = 0.0f;
-    private float thetaOffsetZ = 0.0f;
+    public Vector3 offset = new Vector3(0.5f,-1.4f,0.37f);
+    public Vector3 rotationOffset = new Vector3(20, 0, 0);
+    public float fingerClosedPos = 7000f;
+    public float fingerOpenedPos = 2000f;
+
+
+    //private float OffsetX = -0.50f;// -0.5f; -1.04 // robot left?
+    //private float OffsetY = 1.30f; // 1.2f; 0.8 // robot forwards?
+    //private float OffsetZ = -0.0f; // -0.5f; -0.53
+    //private float thetaOffsetX = 0.0f;
+    //private float thetaOffsetY = 0.0f;
+    //private float thetaOffsetZ = 0.0f;
 
     public Vector3 RobotPosition = new Vector3(-0.4f, 0.4f, -0.5f);
     public Vector3 newRobotPosition = new Vector3(0f, 0f, 0f);
@@ -208,9 +214,9 @@ public class Tracker_Handler : MonoBehaviour
         2.732836f, 
         -1.511767f, 
         -0.4928809f, 
-        fingerOpenedPos,
-        fingerOpenedPos, 
-        fingerOpenedPos
+        2000,
+        2000, 
+        2000
         );
    // -0.5129154, 0.3196311, -0.1113982, 2.732836, -1.511767, -0.4928809 // these values place the arm front and center ready to toast.
 
@@ -230,8 +236,6 @@ public class Tracker_Handler : MonoBehaviour
             pose.fp3
             );
     }
-    static float fingerClosedPos = 7000f;
-    static float fingerOpenedPos = 3500f;
 
     CartesianPosition cartesianCommandToSend = new CartesianPosition();
 
@@ -272,14 +276,18 @@ public class Tracker_Handler : MonoBehaviour
 
     Vector3 GetCurrentOffset() {
         // Ask robot where it is
+        return offset;
+        //return Vector3.zero;
+    }
 
-        return Vector3.zero;
+    Vector3 GetRotationOffset() {
+        return rotationOffset;
     }
 
     void KP_MoveArmToControllerPosition()
     {
-       Vector3 trackerPosition = GetGlobalPosition() + GetCurrentOffset();  
-
+       Vector3 trackerPosition = GetGlobalPosition() + GetCurrentOffset();
+        Vector3 roe = GetRotationOffset();
 
         if (!gripMoving && HoldingDeadTrigger())
         {
@@ -288,9 +296,9 @@ public class Tracker_Handler : MonoBehaviour
             cartesianCommandToSend.x = trackerPosition.z;
             cartesianCommandToSend.y = -trackerPosition.y;
             cartesianCommandToSend.z = -trackerPosition.x;
-            cartesianCommandToSend.thetaX = ((transform.localRotation.eulerAngles.x * (pi / 180.0f) + pi));
-            cartesianCommandToSend.thetaY = (-(transform.localRotation.eulerAngles.y * (pi / 180.0f) - pi / 2));
-            cartesianCommandToSend.thetaZ = (-(transform.localRotation.eulerAngles.z * (pi / 180.0f) - pi));
+            cartesianCommandToSend.thetaX = ((transform.localRotation.eulerAngles.x * (pi / 180.0f) + pi)) + roe.x * Mathf.Deg2Rad;
+            cartesianCommandToSend.thetaY = (-(transform.localRotation.eulerAngles.y * (pi / 180.0f) - pi / 2)) + roe.y * Mathf.Deg2Rad;
+            cartesianCommandToSend.thetaZ = (-(transform.localRotation.eulerAngles.z * (pi / 180.0f) - pi)) + roe.z * Mathf.Deg2Rad;
             SendCurrentCommand();
         }
         else if (gripMoving) {
