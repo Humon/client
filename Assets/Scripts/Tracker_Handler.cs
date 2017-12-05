@@ -136,22 +136,30 @@ public class Tracker_Handler : MonoBehaviour
         controller.MenuButtonClicked += new ClickedEventHandler(ToggleGrip);
     }
 
+    SteamVR_Controller.Device device;
 
-    //void SetStopTimeoutAndMoveFrequency(float si) {
-    //    unlockFrequency = si;
-    //    moveFrequency = si;
-    //   //CancelInvoke();
-    //    //InvokeRepeating("UnlockArm", beginAfterSeconds, repeatInterval);
-    //    FindObjectOfType<HUD>().stopInterval.text = unlockFrequency.ToString();
-    //}
+//void SetStopTimeoutAndMoveFrequency(float si) {
+//    unlockFrequency = si;
+//    moveFrequency = si;
+//   //CancelInvoke();
+//    //InvokeRepeating("UnlockArm", beginAfterSeconds, repeatInterval);
+//    FindObjectOfType<HUD>().stopInterval.text = unlockFrequency.ToString();
+//}
 
-    void Start () // 
-	{
-        SetArmPose(readyToToast);
+void Start ()
+    {
+
+        device = SteamVR_Controller.Input((int)controller.controllerIndex);
+
+        //
     } //END START() FUNCTION
 
+    float currentTriggerDelta = 0f;
+    float dpadTimeout = .3f;
     void Update()  //architecture dependant
     {
+        currentTriggerDelta = controller.controllerState.rAxis1.x;
+        UpdateHoldingDeadTriggerState();
         FindObjectOfType<HUD>().gripMovingTimeout.text = gripMovingTimeout.ToString();
         if (gripMoving && gripMovingTimeout > 0)
         {
@@ -163,19 +171,128 @@ public class Tracker_Handler : MonoBehaviour
             //SetStopTimeoutAndMoveFrequency(unlockFrequency);
         }
 
-        if (controller.padPressed)
+        dpadTimeout -= Time.deltaTime;
+
+        if (controller.padPressed && dpadTimeout < 0)
         {
-            SetArmPose(readyToToast);
+            dpadTimeout = 0.3f;
+            if (device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad)) {
+                Vector2 touchpad = device.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad);
+                if (touchpad.y > 0)
+                {
+                    SetArmPose(readyToServerDrinks);
+                }
+                else if (touchpad.y < 0) {
+                    ToggleMode();
+                }
+            }
+
+
         }
-        //   Debug.Log("axis 4:" + controller.controllerState.rAxis1.x);
+
+        if (mode == Mode.DrawingWhiteZone){
+            if (currentTriggerDelta > .05f)
+            {
+                if (drawWhiteZoneState == DrawingWhiteZoneState.Ready) {
+                    whiteZone.lastSize = 0;
+                    drawWhiteZoneState = DrawingWhiteZoneState.Drawing;
+                    whiteZone.beginningCorner = GetActualTrackerPosition();
+
+                }
+                whiteZone.endCorner = GetActualTrackerPosition();
+                float newSize = (whiteZone.beginningCorner - whiteZone.endCorner).magnitude;
+                float distToTravelForHapticFeedback = .05f;
+                if (newSize - whiteZone.lastSize > distToTravelForHapticFeedback)
+                { 
+                    whiteZone.lastSize = newSize;
+                    device.TriggerHapticPulse(1200);
+                }
+
+
+
+            } else
+            {
+
+                if (drawWhiteZoneState == DrawingWhiteZoneState.Drawing) {
+                    drawWhiteZoneState = DrawingWhiteZoneState.Ready;
+                    Debug.Log("white zone:" + whiteZone.beginningCorner + "," + whiteZone.endCorner);
+                }
+                // we're in draw white zone mode, ready to begin drawing (hold trigger)
+                drawWhiteZoneHapticPulseTimer -= Time.deltaTime;
+                if (drawWhiteZoneHapticPulseTimer < 0f) {
+                    drawWhiteZoneHapticPulseTimer = readyDrawWhiteZoneIntercal;
+                    StartCoroutine(TriggerDoubleHapticPulse());
+                }
+
+            }
+        }
+        
+    }
+
+
+
+    class WhiteZone {
+        public Vector3 beginningCorner = new Vector3(1.0f,-0.9f,-1.0f); // a deafult starting zone that is quite large and to the right of the robot;
+        public Vector3 endCorner = new Vector3(-0.8f, 0.5f, 0.7f);
+        public float lastSize; // used for haptic feedback while drawing as size increases.
+        public bool Contains(Vector3 p) {
+            bool insideX = (p.x > beginningCorner.x && p.x < endCorner.x) || (p.x < beginningCorner.x && p.x > endCorner.x);
+            bool insideY = (p.y > beginningCorner.y && p.y < endCorner.y) || (p.y < beginningCorner.y && p.y > endCorner.y);
+            bool insideZ = (p.z > beginningCorner.z && p.z < endCorner.z) || (p.z < beginningCorner.z && p.z > endCorner.z);
+            //Debug.Log("XYZ:" + insideX + "," + insideY + "," + insideZ);
+            return insideX && insideY && insideZ;
+        }
+    }
+    WhiteZone whiteZone = new WhiteZone();
+
+    float drawWhiteZoneHapticPulseTimer = 0f;
+    float readyDrawWhiteZoneIntercal = 0.5f;
+    float drawingWhiteZoneInterval = 0.2f;
+
+    IEnumerator TriggerDoubleHapticPulse(float delay = 0.3f) {
+        for (int i = 0; i < 5; i++) {
+            device.TriggerHapticPulse(1200);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        yield return new WaitForSeconds(delay);
+        for (int i = 0; i < 5; i++)
+        {
+            device.TriggerHapticPulse(1200);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+    }
+
+    enum DrawingWhiteZoneState {
+        Ready,
+        Drawing
+    }
+    DrawingWhiteZoneState drawWhiteZoneState = DrawingWhiteZoneState.Ready;
+
+    enum Mode {
+        MovingRobotArm,
+        DrawingWhiteZone
+    }
+    Mode mode = Mode.MovingRobotArm;
+
+    void ToggleMode() {
+
+        if (mode == Mode.MovingRobotArm)
+        {
+            mode = Mode.DrawingWhiteZone;
+        } else {
+            mode = Mode.MovingRobotArm;
+        
+        }
+        Debug.Log("Toggled mode to:" + mode.ToString());
     }
 
     // Charlie's dead switch - must pull hair trigger a little to allow movement.
-    bool HoldingDeadTrigger()
+    bool holdingDeadTriggerPreviousState = false;
+    bool UpdateHoldingDeadTriggerState()
     {
         //Debug.Log("check hold dead");
-        Vector3 trackerPosition = GetGlobalPosition();
-        float currentTriggerDelta = controller.controllerState.rAxis1.x;
+        
+       
 
         bool flag = currentTriggerDelta > deadGripThreshhold;
         
@@ -183,11 +300,11 @@ public class Tracker_Handler : MonoBehaviour
         // Debug.Log("<color=green>dead;" + deadGripThreshhold + "</color>, cur;" + currentTriggerDelta+", status:"+flag);
         if (flag)
         {
-            if (firstrun) {
-                initialTrackerPosition = GetGlobalPosition();
-                initialTrackerRotation = GetLocalRotation();
-                firstrun = false;
-                }
+            //if (firstrun) {
+            //    initialTrackerPosition = GetGlobalPosition();
+            //    initialTrackerRotation = GetLocalRotation();
+            //    firstrun = false;
+            //    }
 
             FindObjectOfType<HUD>().canMoveRobot.text = "Enabled";
             FindObjectOfType<HUD>().canMoveRobot.color = Color.green;
@@ -202,20 +319,40 @@ public class Tracker_Handler : MonoBehaviour
         if (controller.controllerState.rAxis1.x < 0.05) {
             firstrun = true;
         }
+
+        //if (holdingDeadTriggerPreviousState == true && flag == false) {
+        //    myNetworkManager.FreezePosition();
+        //    FindObjectOfType<HUD>().lastFrozenTime.text = Time.time.ToString();
+        //}
+
+        holdingDeadTriggerPreviousState = flag;
         return flag;
     }
 
    
 
     CartesianPosition readyToToast = new CartesianPosition(
-        -0.5129154f, 
-        0.3196311f, 
+        -0.6129154f, 
+        0.4196311f, 
         -0.1113982f, 
         2.732836f, 
         -1.511767f, 
         -0.4928809f, 
         2000,
         2000, 
+        2000
+        );
+
+    CartesianPosition readyToServerDrinks = new CartesianPosition(
+        // Note that X and Z are flipped ?
+        -0.5f,
+        0.257f,
+        0.1045f,
+        3.042f,
+        -0.0588f,
+        0.0987f,
+        2000,
+        2000,
         2000
         );
    // -0.5129154, 0.3196311, -0.1113982, 2.732836, -1.511767, -0.4928809 // these values place the arm front and center ready to toast.
@@ -235,6 +372,8 @@ public class Tracker_Handler : MonoBehaviour
             pose.fp2,
             pose.fp3
             );
+        SendCurrentCommand();
+
     }
 
     CartesianPosition cartesianCommandToSend = new CartesianPosition();
@@ -284,22 +423,34 @@ public class Tracker_Handler : MonoBehaviour
         return rotationOffset;
     }
 
+    Vector3 GetActualTrackerPosition() {
+
+        return GetGlobalPosition() + GetCurrentOffset();
+    }
+
     void KP_MoveArmToControllerPosition()
     {
-       Vector3 trackerPosition = GetGlobalPosition() + GetCurrentOffset();
+        Vector3 trackerPosition = GetActualTrackerPosition();
         Vector3 roe = GetRotationOffset();
 
-        if (!gripMoving && HoldingDeadTrigger())
+        if (!gripMoving && holdingDeadTriggerPreviousState)
         {
-            float pi = Mathf.PI;
-            // Only update the target move position if we're not opening/closeing the hand && we're holding dead trigger.
-            cartesianCommandToSend.x = trackerPosition.z;
-            cartesianCommandToSend.y = -trackerPosition.y;
-            cartesianCommandToSend.z = -trackerPosition.x;
-            cartesianCommandToSend.thetaX = ((transform.localRotation.eulerAngles.x * (pi / 180.0f) + pi)) + roe.x * Mathf.Deg2Rad;
-            cartesianCommandToSend.thetaY = (-(transform.localRotation.eulerAngles.y * (pi / 180.0f) - pi / 2)) + roe.y * Mathf.Deg2Rad;
-            cartesianCommandToSend.thetaZ = (-(transform.localRotation.eulerAngles.z * (pi / 180.0f) - pi)) + roe.z * Mathf.Deg2Rad;
-            SendCurrentCommand();
+            if (whiteZone.Contains(trackerPosition))
+            {
+
+                float pi = Mathf.PI;
+                // Only update the target move position if we're not opening/closeing the hand && we're holding dead trigger.
+                cartesianCommandToSend.x = trackerPosition.z;
+                cartesianCommandToSend.y = -trackerPosition.y;
+                cartesianCommandToSend.z = -trackerPosition.x;
+                cartesianCommandToSend.thetaX = ((transform.localRotation.eulerAngles.x * (pi / 180.0f) + pi)) + roe.x * Mathf.Deg2Rad;
+                cartesianCommandToSend.thetaY = (-(transform.localRotation.eulerAngles.y * (pi / 180.0f) - pi / 2)) + roe.y * Mathf.Deg2Rad;
+                cartesianCommandToSend.thetaZ = (-(transform.localRotation.eulerAngles.z * (pi / 180.0f) - pi)) + roe.z * Mathf.Deg2Rad;
+                SendCurrentCommand();
+            }
+            else {
+                device.TriggerHapticPulse(1200);
+            }
         }
         else if (gripMoving) {
 
@@ -349,7 +500,7 @@ public class Tracker_Handler : MonoBehaviour
 		//Vector3 controllerRotation = GetLocalRotation ();
 		roboMoveCount -= Time.deltaTime;
         //unlockFrequencyCount -= Time.deltaTime;
-        if (roboMoveCount < 0)
+        if (roboMoveCount < 0 && mode == Mode.MovingRobotArm)
         {
             
             KP_MoveArmToControllerPosition();

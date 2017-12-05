@@ -137,6 +137,9 @@ public class VideoChatExample : MonoBehaviour {
 	}
 
 	void OnGUI () {
+
+        return; // moved to Unity GUI, press buttons to call these methods. The actions are attached to the buttons on the scene, referencing the gameobject with this script.
+
 		if( !VideoChat.tempImage && !VideoChat.videoPrimed || !UI )
 			return;
 
@@ -269,7 +272,7 @@ public class VideoChatExample : MonoBehaviour {
 		
 		//Collect source video, this will create a new VideoPacket(s) and add it(them) to the videoPackets list in the VideoChat static class
 		VideoChat.FromVideo();
-	
+        //return;
 		numPackets = VideoChat.videoPackets.Count > VideoChat.packetsPerFrame ? VideoChat.packetsPerFrame : VideoChat.videoPackets.Count;				
 		VideoPacket[] tempVideoPackets = new VideoPacket[ VideoChat.videoPackets.Count ];
 		VideoChat.videoPackets.CopyTo( tempVideoPackets );		
@@ -292,7 +295,7 @@ public class VideoChatExample : MonoBehaviour {
 
 	public void StartVideoChat ()
 	  {
-	    Debug.Log ("Starting video chat server...");
+	    Debug.Log ("Starting video chat server...");    
 		if (LAN) {
 		  LANParty.peerType = "server";
 
@@ -333,6 +336,7 @@ public class VideoChatExample : MonoBehaviour {
 
 	 public void JoinVideoChat ()
 	  {
+        return;
 		Debug.Log ("Joining video chat server...");
 		if (LAN) {
 		  LANParty.peerType = "client";

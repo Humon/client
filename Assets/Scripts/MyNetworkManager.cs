@@ -205,7 +205,6 @@ public class MyNetworkManager : MonoBehaviour
   private bool isAtStartup = true;
   private bool connectedToServer = false;
 
-  public static bool isServer = false;
     
   NetworkClient myClient;
 
@@ -228,7 +227,7 @@ public class MyNetworkManager : MonoBehaviour
             // Debug info about where arm thinks it is, should go next frame, and should go globally.
             GetCartesianCommands();
             GetCartesianPositions();
-            //myClient.Send(MyMsgTypes.MSG_GET_CARTESIAN_COMMANDS, m);
+            //myClient.Send(MyMsgTypes.MSG_GET_CARTESIAN_COMMANDS, mconnnn
             GetCachedCartesianCommands();
         }
         //if (Input.GetKeyDown(KeyCode.O))
@@ -248,6 +247,7 @@ public class MyNetworkManager : MonoBehaviour
 
   void OnGUI ()
   {
+        return;
 	if (isAtStartup) {
 	  GUI.Label (new Rect (2, 30, 200, 100), "Press C to start client (controller)");
 	 }
@@ -261,6 +261,7 @@ public class MyNetworkManager : MonoBehaviour
 	InitClient ();    
 	myClient.Connect (address, port);
 	Debug.Log ("Started client");
+        FindObjectOfType<HUD>().serverStatus.text = "Trying to connect .. is server up and started?";
   }
     
   // Create a local client and connect to the local server
@@ -291,12 +292,14 @@ public class MyNetworkManager : MonoBehaviour
   public void OnConnected (NetworkMessage netMsg)
   {
 	    Debug.Log ("Connected to server on " + address + ":" + port);
-        FindObjectOfType<HUD>().connected.text = "Connected";
-        FindObjectOfType<HUD>().connected.color = Color.green;
-        if (!isServer) {
-
-	      Invoke ("JoinVideoChat", 3.0f);
-	    }
+        FindObjectOfType<HUD>().serverStatus.text = "Successfully connected to server!";
+        FindObjectOfType<HUD>().connectedToServer.text = "Connected";
+        FindObjectOfType<HUD>().connectedToServer.color = Color.green;
+        FindObjectOfType<HUD>().joinServerButton.SetActive(false);
+        
+        
+	      //KInvoke ("JoinVideoChat", 3.0f);
+	    
 	    connectedToServer = true;
         InitClientViewMessage m = new InitClientViewMessage();
         myClient.Send(MyMsgTypes.MSG_INIT_CLIENT_VIEW, m); // allows server to talk to client.
@@ -383,7 +386,7 @@ public class MyNetworkManager : MonoBehaviour
             Debug.LogError("Not connected to server!");
             return;
         }
-        Debug.Log("Sending move " + ArmSide(rightArm) + " arm...");
+        //Debug.Log("Sending move " + ArmSide(rightArm) + " arm...");
         MoveArmWithFingersMessage m = new MoveArmWithFingersMessage();
         m.rightArm = rightArm;
         m.x = x;
