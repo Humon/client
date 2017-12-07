@@ -231,7 +231,7 @@ public class MyNetworkManager : MonoBehaviour
     public string address = "127.0.0.1";
     public int port = 11111;
     public GameObject cameraRig;
-    public VideoChatExample videoChat;
+    
 
     private bool isAtStartup = true;
     private bool connectedToServer = false;
@@ -326,8 +326,8 @@ public class MyNetworkManager : MonoBehaviour
         //myClient = ClientScene.ConnectLocalServer();
         myClient.RegisterHandler(MsgType.Connect, OnConnected);
 
-        //  videoChat.remoteView.GetComponent<CameraController>().StartLocalStream();
-        // videoChat.gameObject.SetActive(true);
+        
+
         isAtStartup = false;
         NetworkServer.Listen(port);
         //NetworkServer.RegisterHandler(MyMsgTypes./*MSG_GET_CART_POS_FROM_SERVER*/, GetCartPosFromServer);
@@ -343,7 +343,7 @@ public class MyNetworkManager : MonoBehaviour
         FindObjectOfType<HUD>().joinServerButton.SetActive(false);
 
 
-        //KInvoke ("JoinVideoChat", 3.0f);
+        
 
         connectedToServer = true;
         InitClientViewMessage m = new InitClientViewMessage();
@@ -439,12 +439,8 @@ public class MyNetworkManager : MonoBehaviour
         //chat.Add(msg.value);
     }
 
-    private void JoinVideoChat()
-    {
-
-    }
-
-    //videoChat.JoinVideoChat ();
+    
+    
 
 
     public void GetCartesianPositions()
