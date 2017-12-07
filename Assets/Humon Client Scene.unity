@@ -392,15 +392,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gripStatus: {fileID: 1402344934}
-  gripMoving: {fileID: 0}
   joinServerButton: {fileID: 2044187120}
   serverStatus: {fileID: 167828033}
   canMoveRobot: {fileID: 1167506044}
-  connectedToServer: {fileID: 0}
   connectedToCamera: {fileID: 1494727014}
-  gripMovingTimeout: {fileID: 0}
-  stopInterval: {fileID: 0}
-  lastFrozenTime: {fileID: 0}
   currentPosition: {fileID: 408481639}
 --- !u!1 &246234976
 GameObject:
@@ -874,7 +869,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 18.3, y: -168.7}
+  m_AnchoredPosition: {x: 18.3, y: -196}
   m_SizeDelta: {x: 354.9, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &536227768
@@ -1617,13 +1612,6 @@ MonoBehaviour:
   rotationOffset: {x: -20, y: 0, z: 0}
   fingerClosedPos: 7000
   fingerOpenedPos: 3500
-  RobotPosition: {x: -0.4, y: 0.4, z: -0.5}
-  newRobotPosition: {x: 0, y: 0, z: 0}
-  RobotRotation: {x: 3.1, y: 0.12, z: -0.03}
-  initialTrackerPosition: {x: 0, y: 0, z: 0}
-  initialTrackerRotation: {x: 0, y: 0, z: 0}
-  tracking: 0
-  firstrun: 1
   moveFrequency: 0.05
   roboMoveCount: 0
   controller: {fileID: 1944173734}
@@ -1968,13 +1956,6 @@ MonoBehaviour:
   rotationOffset: {x: 0, y: 0, z: 0}
   fingerClosedPos: 7000
   fingerOpenedPos: 2000
-  RobotPosition: {x: -0.4, y: 0.4, z: -0.5}
-  newRobotPosition: {x: 0, y: 0, z: 0}
-  RobotRotation: {x: 3.1, y: 0.12, z: -0.03}
-  initialTrackerPosition: {x: 0, y: 0, z: 0}
-  initialTrackerRotation: {x: 0, y: 0, z: 0}
-  tracking: 0
-  firstrun: 1
   moveFrequency: 0.05
   roboMoveCount: 0
   controller: {fileID: 75436759}
@@ -3037,7 +3018,6 @@ MonoBehaviour:
   address: 10.2.10.113
   port: 11111
   cameraRig: {fileID: 1812014154}
-  videoChat: {fileID: 1598793703}
 --- !u!4 &1540994995
 Transform:
   m_ObjectHideFlags: 0
@@ -3323,8 +3303,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 756.1, y: 281.1}
+  m_AnchoredPosition: {x: 0, y: 11}
+  m_SizeDelta: {x: 756.1, y: 376.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1695285009
 MonoBehaviour:
