@@ -155,7 +155,7 @@ void Start ()
     } //END START() FUNCTION
 
     float currentTriggerDelta = 0f;
-    float dpadTimeout = .3f;
+    float dpadTimeout = 0.3f;
     void Update()  //architecture dependant
     {
         currentTriggerDelta = controller.controllerState.rAxis1.x;
@@ -171,24 +171,33 @@ void Start ()
             //SetStopTimeoutAndMoveFrequency(unlockFrequency);
         }
 
-        dpadTimeout -= Time.deltaTime;
-
-        if (controller.padPressed && dpadTimeout < 0)
+        //if ()
+        if (controller.padPressed)
         {
-            dpadTimeout = 0.3f;
-            if (device.GetTouch(SteamVR_Controller.ButtonMask.Touchpad)) {
-                Vector2 touchpad = device.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad);
-                if (touchpad.y > 0)
-                {
-                    SetArmPose(readyToServerDrinks);
-                }
-                else if (touchpad.y < 0) {
-                    ToggleMode();
-                }
+            if (DpadComm.PadPressed(DpadComm.DpadPosition.Up, device))
+            {
+                SetArmPose(RobotPoses.readyToServerDrinks);
+            }
+
+            else if (DpadComm.PadPressed(DpadComm.DpadPosition.Down, device))
+            {
+                ToggleMode();
+            }
+            else if (DpadComm.PadPressed(DpadComm.DpadPosition.Left, device))
+            {
+                myNetworkManager.RequestArmPositionsFromServer();
+            }
+            else if (DpadComm.PadPressed(DpadComm.DpadPosition.Right, device)) {
+                SetArmPose(RobotPoses.readyToPushStartBlender);
+
             }
 
 
+            
+
+
         }
+
 
         if (mode == Mode.DrawingWhiteZone){
             if (currentTriggerDelta > .05f)
@@ -320,10 +329,10 @@ void Start ()
             firstrun = true;
         }
 
-        //if (holdingDeadTriggerPreviousState == true && flag == false) {
-        //    myNetworkManager.FreezePosition();
-        //    FindObjectOfType<HUD>().lastFrozenTime.text = Time.time.ToString();
-        //}
+        if (holdingDeadTriggerPreviousState == true && flag == false) {
+            FreezeArmPosition();
+            FindObjectOfType<HUD>().lastFrozenTime.text = Time.time.ToString();
+        }
 
         holdingDeadTriggerPreviousState = flag;
         return flag;
@@ -331,34 +340,10 @@ void Start ()
 
    
 
-    CartesianPosition readyToToast = new CartesianPosition(
-        -0.6129154f, 
-        0.4196311f, 
-        -0.1113982f, 
-        2.732836f, 
-        -1.511767f, 
-        -0.4928809f, 
-        2000,
-        2000, 
-        2000
-        );
+    
 
-    CartesianPosition readyToServerDrinks = new CartesianPosition(
-        // Note that X and Z are flipped ?
-        -0.5f,
-        0.257f,
-        0.1045f,
-        3.042f,
-        -0.0588f,
-        0.0987f,
-        2000,
-        2000,
-        2000
-        );
-   // -0.5129154, 0.3196311, -0.1113982, 2.732836, -1.511767, -0.4928809 // these values place the arm front and center ready to toast.
-
-
-    void SetArmPose(CartesianPosition pose) {
+    void SetArmPose(CartesianPosition pose)
+    {
 
         // Make sure to call this so that the FIRST command that is sent the robot is already a pose (not 0,0,0,0,0)
         cartesianCommandToSend = new CartesianPosition(
@@ -373,8 +358,27 @@ void Start ()
             pose.fp3
             );
         SendCurrentCommand();
+        
+    }
+
+    bool armFrozen = false;
+    void FreezeArmPosition() {
+        Debug.Log("Freeze initiated");
+        // Request from the server the currenmt position and wait for the callback.
+        myNetworkManager.RequestArmPositionsFromServerAndFreeze();
+    }
+
+    public void FreezeArmPositionCallback(CartesianPosition frozenPosition) {
+        armFrozen = true;
+        Debug.Log("Callback with frozen pos :" + frozenPosition.x.ToString("0:00") + "," + frozenPosition.y.ToString("0:00") + "," + frozenPosition.z.ToString("0:00"));
+        cartesianCommandToSend = frozenPosition;
+        SendCurrentCommand();
+
 
     }
+
+    
+
 
     CartesianPosition cartesianCommandToSend = new CartesianPosition();
 
@@ -403,7 +407,7 @@ void Start ()
         }
 
         // while gripmoving is true, no further updates to position will be sent until timeout expires.
-       // myNetworkManager.FreezePosition();
+       
         gripMoving = true;
         FindObjectOfType<HUD>().gripMoving.text = "True";
         gripMovingTimeout = 1f;
@@ -437,18 +441,21 @@ void Start ()
         {
             if (whiteZone.Contains(trackerPosition))
             {
-
+                if (armFrozen) armFrozen = false;
                 float pi = Mathf.PI;
                 // Only update the target move position if we're not opening/closeing the hand && we're holding dead trigger.
                 cartesianCommandToSend.x = trackerPosition.z;
                 cartesianCommandToSend.y = -trackerPosition.y;
                 cartesianCommandToSend.z = -trackerPosition.x;
-                cartesianCommandToSend.thetaX = ((transform.localRotation.eulerAngles.x * (pi / 180.0f) + pi)) + roe.x * Mathf.Deg2Rad;
-                cartesianCommandToSend.thetaY = (-(transform.localRotation.eulerAngles.y * (pi / 180.0f) - pi / 2)) + roe.y * Mathf.Deg2Rad;
-                cartesianCommandToSend.thetaZ = (-(transform.localRotation.eulerAngles.z * (pi / 180.0f) - pi)) + roe.z * Mathf.Deg2Rad;
+                cartesianCommandToSend.thetaX = ((transform.rotation.eulerAngles.x * (pi / 180.0f) + pi)) + roe.x * Mathf.Deg2Rad;
+                cartesianCommandToSend.thetaY = (-(transform.rotation.eulerAngles.y * (pi / 180.0f) - pi / 2)) + roe.y * Mathf.Deg2Rad;
+                cartesianCommandToSend.thetaZ = (-(transform.rotation.eulerAngles.z * (pi / 180.0f) - pi)) + roe.z * Mathf.Deg2Rad;
                 SendCurrentCommand();
             }
             else {
+                if (!armFrozen) {
+                    FreezeArmPosition();
+                }
                 device.TriggerHapticPulse(1200);
             }
         }
@@ -623,9 +630,9 @@ void Start ()
 	Vector3 GetLocalRotation () 
 	{
 
-		Vector3 newPosition = new Vector3 ((float)this.transform.localRotation.x, (float)this.transform.localRotation.y, (float)this.transform.localRotation.z);
+		Vector3 rot = new Vector3 ((float)this.transform.rotation.eulerAngles.x, (float)this.transform.rotation.eulerAngles.y, (float)this.transform.rotation.eulerAngles.z);
 
-		return newPosition;
+		return rot;
 	}
 
     /**@brief GetGlobalVelocity() returns X, Y, Y velocity vector of hand controller  
@@ -664,39 +671,4 @@ void Start ()
 		return acceleration;
 	}
 } //END HANDCONTROLLER CLASS
-
-// this data structure should live in a DataStructures file.
-public class CartesianPosition
-{
-    public float x = 0;
-    public float y = 0;
-    public float z = 0;
-    public float thetaX = 0;
-    public float thetaY = 0;
-    public float thetaZ = 0;
-    public float fp1 = 0;
-    public float fp2 = 0;
-    public float fp3 = 0;
-    public CartesianPosition(
-        float _x = -.5f,
-        float _y = .3f,
-        float _z = -0.1f,
-        float _thetaX = 0f,
-        float _thetaY = 0f,
-        float _thetaZ = 0f,
-        float _fp1 = 0f,
-        float _fp2 = 0f,
-        float _fp3 = 0f)
-    {
-        x = _x;
-        y = _y;
-        z = _z;
-        thetaX = _thetaX;
-        thetaY = _thetaY;
-        thetaZ = _thetaZ;
-        fp1 = _fp1;
-        fp2 = _fp2;
-        fp3 = _fp3;
-    }
-}
 

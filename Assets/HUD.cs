@@ -15,4 +15,5 @@ public class HUD : MonoBehaviour {
     public Text gripMovingTimeout;
     public Text stopInterval;
     public Text lastFrozenTime;
+    public Text currentPosition;
 }
